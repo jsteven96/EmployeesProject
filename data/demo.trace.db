@@ -1,0 +1,8 @@
+2021-06-06 12:27:13 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabla "CANDIDATE" ya existe
+Table "CANDIDATE" already exists; SQL statement:
+CREATE TABLE Candidate ( id int auto_increment, name varchar(100) NOT NULL, last_name varchar(100) NOT NULL, address varchar(100), cellphone varchar(30), city_name varchar(100), PRIMARY KEY (id)) [42101-200]
+2021-06-06 12:28:19 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabla "CANDIDATE" ya existe
+Table "CANDIDATE" already exists; SQL statement:
+CREATE TABLE Candidate ( id int auto_increment, name varchar(100) NOT NULL, last_name varchar(100) NOT NULL, address varchar(100), cellphone varchar(30), city_name varchar(100), PRIMARY KEY (id)) [42101-200]
