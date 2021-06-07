@@ -1,8 +1,11 @@
 package io.leantech.knowledge.EmployeesProject.dtos;
 
-public class CargoDTO {
+import java.util.List;
+
+public class PositionDTO {
 	private Integer id;
 	private String name;
+	private List<EmployeeDTO> employees;
 	
 	public Integer getId() {
 		return id;
@@ -16,6 +19,10 @@ public class CargoDTO {
 	public void setName(String name) {
 		this.name = name;
 	}
-	
-	
+	public List<EmployeeDTO> getEmployees() {
+		return employees;
+	}
+	public void setEmployees(List<EmployeeDTO> employees) {
+		this.employees = employees;
+	}
 }

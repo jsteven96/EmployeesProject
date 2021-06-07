@@ -3,18 +3,17 @@ package io.leantech.knowledge.EmployeesProject.entities;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
-
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 @Table(name = "Candidate")
 public class Candidate {
 	
 	@Id
-	@GeneratedValue
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name = "id")
 	private Integer id;
 	@Column(name = "name")
@@ -28,7 +27,6 @@ public class Candidate {
 	@Column(name = "city_name")
 	private String cityName;
 	
-	@JsonIgnore
 	@OneToOne(mappedBy = "candidate")
 	private Employee employee;
 	

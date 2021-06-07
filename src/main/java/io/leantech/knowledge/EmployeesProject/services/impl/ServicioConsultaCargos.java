@@ -2,15 +2,30 @@ package io.leantech.knowledge.EmployeesProject.services.impl;
 
 import java.util.List;
 
-import io.leantech.knowledge.EmployeesProject.entities.Position;
-import io.leantech.knowledge.EmployeesProject.services.ServicioConsultaCargosI;
+import org.modelmapper.ModelMapper;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+import io.leantech.knowledge.EmployeesProject.dtos.PositionDTO;
+import io.leantech.knowledge.EmployeesProject.repositories.PositionRepository;
+import io.leantech.knowledge.EmployeesProject.services.ServicioConsultaCargosI;
+import io.leantech.knowledge.EmployeesProject.services.ServicioConvertidorI;
+
+@Service
 public class ServicioConsultaCargos implements ServicioConsultaCargosI {
+	
+	@Autowired
+	PositionRepository positionRepository;
+	
+	@Autowired
+	ServicioConvertidorI servicioConvertidor;
+	
+	@Autowired
+	ModelMapper modelMapper;
 
 	@Override
-	public List<Position> cargos() {
-		// TODO Auto-generated method stub
-		return null;
+	public List<PositionDTO> consultarCargos() {
+		return servicioConvertidor.fromPositionsToPositionDTOs(positionRepository.findAll());
 	}
-
+	
 }

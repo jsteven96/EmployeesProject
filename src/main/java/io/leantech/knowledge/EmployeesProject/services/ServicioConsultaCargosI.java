@@ -2,8 +2,8 @@ package io.leantech.knowledge.EmployeesProject.services;
 
 import java.util.List;
 
-import io.leantech.knowledge.EmployeesProject.entities.Position;
+import io.leantech.knowledge.EmployeesProject.dtos.PositionDTO;
 
 public interface ServicioConsultaCargosI {
-	public List<Position> cargos();
+	public List<PositionDTO> consultarCargos();
 }

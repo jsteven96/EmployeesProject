@@ -2,8 +2,8 @@ package io.leantech.knowledge.EmployeesProject.services;
 
 import java.util.List;
 
-import io.leantech.knowledge.EmployeesProject.dtos.EmpleadoDTO;
+import io.leantech.knowledge.EmployeesProject.dtos.BasicEmployeeDTO;
 
 public interface ServicioConsultaEmpleadosI {
-	public List<EmpleadoDTO> consultarEmpleados(String posicion, String nombre);
+	public List<BasicEmployeeDTO> consultarEmpleados(String posicion, String nombre);
 }
