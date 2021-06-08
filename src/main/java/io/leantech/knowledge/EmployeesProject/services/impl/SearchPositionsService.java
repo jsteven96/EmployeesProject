@@ -8,23 +8,23 @@ import org.springframework.stereotype.Service;
 
 import io.leantech.knowledge.EmployeesProject.dtos.PositionDTO;
 import io.leantech.knowledge.EmployeesProject.repositories.PositionRepository;
-import io.leantech.knowledge.EmployeesProject.services.ServicioConsultaCargosI;
-import io.leantech.knowledge.EmployeesProject.services.ServicioConvertidorI;
+import io.leantech.knowledge.EmployeesProject.services.SearchPositionsServiceI;
+import io.leantech.knowledge.EmployeesProject.services.DTOMapperServiceI;
 
 @Service
-public class ServicioConsultaCargos implements ServicioConsultaCargosI {
+public class SearchPositionsService implements SearchPositionsServiceI {
 	
 	@Autowired
 	PositionRepository positionRepository;
 	
 	@Autowired
-	ServicioConvertidorI servicioConvertidor;
+	DTOMapperServiceI servicioConvertidor;
 	
 	@Autowired
 	ModelMapper modelMapper;
 
 	@Override
-	public List<PositionDTO> consultarCargos() {
+	public List<PositionDTO> searchPositions() {
 		return servicioConvertidor.fromPositionsToPositionDTOs(positionRepository.findAll());
 	}
 	

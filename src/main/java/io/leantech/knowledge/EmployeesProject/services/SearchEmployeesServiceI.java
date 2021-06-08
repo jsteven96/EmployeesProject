@@ -4,6 +4,6 @@ import java.util.List;
 
 import io.leantech.knowledge.EmployeesProject.dtos.BasicEmployeeDTO;
 
-public interface ServicioConsultaEmpleadosI {
-	public List<BasicEmployeeDTO> consultarEmpleados(String posicion, String nombre);
+public interface SearchEmployeesServiceI {
+	public List<BasicEmployeeDTO> searchEmployees(String positionName, String employeeName);
 }

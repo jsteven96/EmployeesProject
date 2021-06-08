@@ -4,6 +4,6 @@ import java.util.List;
 
 import io.leantech.knowledge.EmployeesProject.dtos.PositionDTO;
 
-public interface ServicioConsultaCargosI {
-	public List<PositionDTO> consultarCargos();
+public interface SearchPositionsServiceI {
+	public List<PositionDTO> searchPositions();
 }

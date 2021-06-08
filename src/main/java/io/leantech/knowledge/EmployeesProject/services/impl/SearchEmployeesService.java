@@ -10,23 +10,23 @@ import org.springframework.stereotype.Service;
 import io.leantech.knowledge.EmployeesProject.dtos.BasicEmployeeDTO;
 import io.leantech.knowledge.EmployeesProject.entities.Employee;
 import io.leantech.knowledge.EmployeesProject.repositories.EmployeeRepository;
-import io.leantech.knowledge.EmployeesProject.services.ServicioConsultaEmpleadosI;
+import io.leantech.knowledge.EmployeesProject.services.SearchEmployeesServiceI;
 
 @Service
-public class ServicioConsultaEmpleados implements ServicioConsultaEmpleadosI {
+public class SearchEmployeesService implements SearchEmployeesServiceI {
 	
 	@Autowired
 	EmployeeRepository employeeRepository;
 
 	@Override
-	public List<BasicEmployeeDTO> consultarEmpleados(String posicion, String nombre) {
+	public List<BasicEmployeeDTO> searchEmployees(String positionName, String employeName) {
 		List<Employee> resultado = new ArrayList<>();
 		List<BasicEmployeeDTO> retorno = new ArrayList<>();
 
-		if(posicion != null && !posicion.isEmpty()) {
-			resultado = employeeRepository.findAllByPosition_NameLike("%" +posicion + "%");
-		} else if(nombre != null && !nombre.isEmpty()) {
-			resultado = employeeRepository.findAllByCandidate_NameLike("%" + nombre + "%");
+		if(positionName != null && !positionName.isEmpty()) {
+			resultado = employeeRepository.findAllByPosition_NameLike("%" +positionName + "%");
+		} else if(employeName != null && !employeName.isEmpty()) {
+			resultado = employeeRepository.findAllByCandidate_NameLike("%" + employeName + "%");
 		} else {
 			resultado = employeeRepository.findAll();
 		}

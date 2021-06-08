@@ -13,10 +13,10 @@ import io.leantech.knowledge.EmployeesProject.dtos.PositionDTO;
 import io.leantech.knowledge.EmployeesProject.entities.Candidate;
 import io.leantech.knowledge.EmployeesProject.entities.Employee;
 import io.leantech.knowledge.EmployeesProject.entities.Position;
-import io.leantech.knowledge.EmployeesProject.services.ServicioConvertidorI;
+import io.leantech.knowledge.EmployeesProject.services.DTOMapperServiceI;
 
 @Service
-public class ServicioConvertidor implements ServicioConvertidorI {
+public class DTOMapperService implements DTOMapperServiceI {
 	
 	@Autowired
 	ModelMapper modelMapper;
