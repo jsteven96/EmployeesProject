@@ -11,7 +11,7 @@
 	<groupId>io.leantech.knowledge</groupId>
 	<artifactId>EmployeesProject</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>war</packaging>
+	<packaging>jar</packaging>
 	<name>EmployeesProject</name>
 	<description>Excercise about employees, candidates and positions.</description>
 	<properties>
@@ -108,6 +108,7 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+				
 				<configuration>
 					<excludes>
 						<exclude>
