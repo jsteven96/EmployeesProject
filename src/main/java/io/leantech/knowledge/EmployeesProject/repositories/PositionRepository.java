@@ -7,5 +7,5 @@ import io.leantech.knowledge.EmployeesProject.entities.Position;
 
 @Repository
 public interface PositionRepository extends JpaRepository<Position, Integer> {
-
+	Position findByName(String position);
 }

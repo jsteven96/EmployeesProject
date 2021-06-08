@@ -5,6 +5,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -16,7 +17,7 @@ import javax.persistence.Table;
 @Table(name = "Employee")
 public class Employee {
 	@Id
-	@GeneratedValue
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name = "id")
 	private Integer id;
 	@Column(name = "salary")
@@ -27,9 +28,8 @@ public class Employee {
 	@JoinColumn(name = "person")
 	private Candidate candidate;
 
-
+	@JoinColumn(name="position", referencedColumnName = "id", updatable = false)
 	@ManyToOne
-	@JoinColumn(name="position")
 	private Position position;
 	
 	public Employee() {

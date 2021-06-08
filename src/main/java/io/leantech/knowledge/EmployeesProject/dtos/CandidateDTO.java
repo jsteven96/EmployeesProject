@@ -1,19 +1,12 @@
 package io.leantech.knowledge.EmployeesProject.dtos;
 
-public class CandidatoDTO {
-	private Integer id;
+public class CandidateDTO {
 	private String name;
 	private String lastName;
 	private String address;
 	private String cellphone;
 	private String cityName;
 	
-	public Integer getId() {
-		return id;
-	}
-	public void setId(Integer id) {
-		this.id = id;
-	}
 	public String getName() {
 		return name;
 	}
